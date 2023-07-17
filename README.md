@@ -83,6 +83,9 @@ list_a + list_b
 You can output text to the console using `print` method.
 Variables can be formatted if you need concatenate them with a string.
 
+
+Old style (% operator):
+
 ```python
 # %s - String (or any object with a string representation, like numbers)
 # %d - Integers
@@ -99,6 +102,36 @@ print("%s is %d years old." % (name, age))
 # Not a string can be formatted as string as well
 mylist = [1, 2, 3]
 print("List: %s." % mylist)
+```
+
+New style (str.format) is preffered over %-style formatting:
+
+```python
+name = "Mike"
+greeting = "Hello"
+
+"Hello, {}!".format(name)
+
+"{greeting}, {name}!".format(greeting=greeting, name=name)
+```
+
+String interpolation / f-Strings (Python 3.6+) is similar to JS:
+
+```
+name = "Mike"
+
+f'Hello, {name}!'
+```
+
+Template strings (standard library):
+
+```python
+from string import Template
+
+name = "Mike"
+
+t = Template('Hello, $name!')
+t.substitute(name=name)
 ```
 
 ## Basic string operations
