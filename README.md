@@ -236,7 +236,6 @@ x is y # False
 ```
 
 ## Loops
-
 `for` is similar to `for in` in JS:
 
 ```python
@@ -331,6 +330,59 @@ config["salaries"].pop("Bob")
 # Iterating over
 for employee, salary in config["salaries"].items():
     pass
+```
+
+## Pandas DataFrames
+Allow to store and manipulate tabular data:
+
+```python
+import pandas as pd
+
+dict = {
+    "employee": ["Mike", "Bob", "Jessica"],
+    "salary": [10000, 5000, 7000],
+    "role": ["developer", "manager", "developer"],
+}
+
+employees = pd.DataFrame(dict)
+
+print(employees)  
+#   employee  salary       role
+# 0     Mike   10000  developer
+# 1      Bob    5000    manager
+# 2  Jessica    7000  developer
+
+# If you'd like to change indexes 0, 1, 2 to something other:
+employees.index = ["M", "B", "J"]
+
+# It's also possible to import data from csv file:
+employees = pd.read_csv('employees.csv', index_col=0)
+
+print(employees)
+#          age  salary       role seniority
+# name                                     
+# Mike      31   10000  developer    senior
+# Bob       40    5000    manager    junior
+# Jessica   27    7000  developer    middle
+
+# Print out salary column as Pandas Series
+print(employees['salary'])
+
+# Print out salary column as Pandas DataFrame
+print(employees[['salary']])
+
+# Print out DataFrame with role and salary columns
+print(employees[['role', 'salary']])
+
+# You can use the next syncax to access obserwations (rows) from a DataFrame.
+# Print out first two rows
+print(employees[0:2])
+
+# Print observation for Mike (by index number)
+print(employees.iloc(0))
+
+# Print observations by index names
+print(employees.loc[['Mike', 'Jessica']])
 ```
 
 ## Modules
