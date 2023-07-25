@@ -48,6 +48,24 @@ len(var_list)
 var_list[10]
 ```
 
+## Numpy arrays
+Alternative to lists. Advantages: fase, easy to work with, opportunity to perform calculatuins accross entire arrays.
+
+```python
+import numpy as np
+
+height = [1.82, 1.65, 1.76]
+weight = [80, 91, 68]
+
+np_height = np.array(height)
+np_weight = np.array(weight)
+
+bmi = np_weight / np_height ** 2
+
+print(bmi > 23)      # [ True  True False]
+print(bmi[bmi > 23]) # [24.1516725 33.4251607]
+```
+
 ## Basic operations
 Math operations are the same, but there are more functions of operators `+` or `*`:
 
