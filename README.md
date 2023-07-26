@@ -66,6 +66,15 @@ print(bmi > 23)      # [ True  True False]
 print(bmi[bmi > 23]) # [24.1516725 33.4251607]
 ```
 
+## List comprehensions
+Allow as to create a new list based on another list, in a single, readable line.
+
+```python
+animals = ['dog', 'crocodile', 'cat', 'bull', 'fox', 'bear']
+three_letter_animals = [animal for animal in animals if len(animal) == 3]
+print(three_letter_animals) # ['dog', 'cat', 'fox']
+```
+
 ## Basic operations
 Math operations are the same, but there are more functions of operators `+` or `*`:
 
