@@ -426,3 +426,27 @@ __all__ = ["calc"]
 
 Standard modules library can be found here:
 https://docs.python.org/3/library/
+
+## Generators
+Similar to JS:
+
+```python
+import types
+
+def fibonacci():
+    a, b = 1, 1
+    while 1:
+        yield a
+        a, b = b, a + b
+
+if type(fibonacci()) == types.GeneratorType:
+    counter = 0
+    for n in fibonacci():
+        print(n) # 1 1 2 3 5 8 11
+        counter += 1
+        if counter == 7:
+            break
+else:
+    print('Function is not a generator')
+```
+
