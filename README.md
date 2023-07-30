@@ -434,6 +434,29 @@ print(employees.iloc(0))
 print(employees.loc[['Mike', 'Jessica']])
 ```
 
+## Sets
+Idea is the same like for Set in JS.
+
+```python
+set("I have a cat and you have a cat".split(" ")) # {'I', 'a', 'and', 'have', 'cat', 'you'}
+```
+
+Unlike to JS there is a possibility to calculate intersections or differences of sets:
+
+```python
+a = set(["Mike", "Jane", "Eric"])
+b = set(["Jane", "Justin"])
+
+a.intersection(b) # {'Jane'}
+
+a.symmetric_difference(b) # {'Justin', 'Mike', 'Eric'}
+
+a.difference(b) # {'Eric', 'Mike'}
+b.difference(a) # {'Justin'}
+
+a.union(b) # {'Justin', 'Mike', 'Jane', 'Eric'}
+```
+
 ## Modules
 Modules importing is similar as JS `import` works: it executing mode in the imported module only once, so local variables inside the module are singletones.
 
