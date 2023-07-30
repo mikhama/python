@@ -512,3 +512,24 @@ bool(re.match(all_lowercase_letters_pattern, 'camelCase')) # False
 cat_pattern = re.compile(r"cat")
 re.search(cat_pattern, 'dog, cat and parrot').span() # (5, 8)
 ```
+
+## Exception handling
+Unlike JS, there is a possibility to catch exact error:
+
+```python
+try:
+    print(a)
+except NameError:
+    print("You need to declare variable 'a' before using")
+```
+
+Or any other error:
+
+```python
+try:
+    print(a)
+except Exception:
+    print("Unexpected error has happened")
+```
+
+More can be found in [docs](https://docs.python.org/3/tutorial/errors.html#handling-exceptions)
