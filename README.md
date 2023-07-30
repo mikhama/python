@@ -297,6 +297,14 @@ fn_without_args()
 fn_with_args(1, 2)
 ```
 
+## Lambda functions
+Similar to JS function expressions by nature, even more to arrow functions, because of short syntax without `return` keyword.
+
+```python
+add = lambda a, b : a + b
+add(1, 2)
+```
+
 ## Classes
 ```python
 class Employee:
