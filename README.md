@@ -305,6 +305,38 @@ add = lambda a, b : a + b
 add(1, 2)
 ```
 
+## Function arguments
+Similar to JS rest operator usage:
+
+```python
+def sum(*arguments):
+    sum = 0
+    for i in list(arguments):
+        sum += i
+    return sum
+sum(1, 2, 3)
+
+def calc(operation, *operands):
+    result = 0
+    if operation == 'sum':
+        for i in list(operands):
+            result += i
+    # other operations...
+    return result
+calc('sum', 2, 3)
+```
+
+There is a way to pass arguments with names, where order does not matter, like using object in JS.
+
+```python
+def calc(a, b, **options):
+    if options.get('action') == 'sub':
+        return a - b
+    # other operations...
+    return a + b
+calc(2, 2, action = 'sub')
+```
+
 ## Classes
 ```python
 class Employee:
