@@ -499,3 +499,16 @@ else:
     print('Function is not a generator')
 ```
 
+## Regular expressions
+Docs can be found [here](https://docs.python.org/3/library/re.html#regular-expression-syntax%22RE%20syntax).
+
+```python
+import re
+
+all_lowercase_letters_pattern = re.compile(r"^[a-z]+$")
+bool(re.match(all_lowercase_letters_pattern, 'lowercase')) # True
+bool(re.match(all_lowercase_letters_pattern, 'camelCase')) # False
+
+cat_pattern = re.compile(r"cat")
+re.search(cat_pattern, 'dog, cat and parrot').span() # (5, 8)
+```
