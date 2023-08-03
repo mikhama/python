@@ -556,3 +556,18 @@ except Exception:
 ```
 
 More can be found in [docs](https://docs.python.org/3/tutorial/errors.html#handling-exceptions)
+
+## JSON serialization
+```python
+import json 
+
+# works like JSON.stringify
+json_string = json.dumps({
+    "user": "Mike",
+    "age": 31,
+    "tags": ["developer", "team lead"]
+})
+
+# works like JSON.parse
+dictionary = json.loads(json_string)
+```
