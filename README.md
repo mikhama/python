@@ -337,6 +337,20 @@ def calc(a, b, **options):
 calc(2, 2, action = 'sub')
 ```
 
+## Partial functions
+Similar to partial application pattern in JS. But you need to import a separate module to do that.
+
+```python
+from functools import partial
+
+def pow(x, n):
+    return n ** x
+
+sqr = partial(pow, 2)
+
+print(sqr(5)) # 25
+```
+
 ## Classes
 ```python
 class Employee:
