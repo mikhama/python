@@ -351,6 +351,63 @@ sqr = partial(pow, 2)
 print(sqr(5)) # 25
 ```
 
+## Closures
+The same idea like in JS.
+
+```python
+def outer(message):
+    def nested():
+        print(message)
+
+    nested()
+
+outer("hello")
+```
+
+Nested functions can access variables of the outer functions, but they are read only.
+```python
+def outer(message):
+    print(message)           # hello
+
+    def nested():
+        message = "it's me"
+        print(message)       # it's me
+
+    nested()
+
+    print(message)           # hello
+
+outer("hello")
+```
+
+But you can use a keyword `nonlocal` to rewrite them:
+```python
+def outer(message):
+    print(message)           # hello
+
+    def nested():
+        nonlocal message
+        message = "it's me"
+        print(message)       # it's me
+        message = "I'm just wondering"
+
+    nested()
+
+    print(message)           # "I'm just wondering"
+
+outer("hello")
+```
+
+We can return function itself instead of calling the same way like in JS:
+```python
+def sum(a):
+    def add(b):
+        return a + b
+    return add
+
+print(sum(1)(2))
+```
+
 ## Classes
 ```python
 class Employee:
