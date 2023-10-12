@@ -425,6 +425,45 @@ mike.setSalary(10000)
 print(mike.salary)
 ```
 
+## Decorators
+Decorator enables possibility to modify callable objects like functions, methods, or classes. Similar to decorators in TypeScript.
+Decorator is just another function which takes a function and returns one.
+
+Simple decorator:
+```python
+def logger_decorator(function):
+    def decorated_function(*args, **kwds):
+        result = function(*args, **kwds)
+        print('The result of the operation is', result)
+        return result
+    return decorated_function
+
+@logger_decorator
+def sum(a, b):
+    return a + b
+
+print(sum(1, 2))
+```
+
+With parameters:
+
+```python
+def logger(description):
+    def decorator(function):
+        def decorated_function(*args, **kwds):
+            result = function(*args, **kwds)
+            print(description, result)
+            return result
+        return decorated_function
+    return decorator
+
+@logger('Sum of two numbers is')
+def sum(a, b):
+    return a + b
+
+print(sum(1, 2))
+```
+
 ## Dictionaries
 Dictionary is a similar to JS object. You can create them with a set of fields, even nested ones, and also accessing, adding, deleting them as well as iterating over them:
 
