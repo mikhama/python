@@ -305,6 +305,49 @@ add = lambda a, b : a + b
 add(1, 2)
 ```
 
+## Map, Filter, Reduce
+These well known paradigms to JS developer allows you to apply a function across a number of iterables.
+`map` and `filter` go into `__builtins__` module, you don't need to import them. `reduce` needs to be imported (go into `functools` module).
+
+Map:
+```python
+numbers = [2, 3, 4, 5]
+
+squared_numbers = list(map(lambda number: number ** 2, numbers))
+
+print(squared_numbers)
+```
+
+More that only one iterable can be transformed with a `map`. If their length are not equal, output will be equal to length of the shortest one:
+```python
+array_a = [1, 2, 3, 4]
+array_b = [2, 3, 4, 5]
+
+results = list(map(lambda a, b: a * b, array_a, array_b))
+
+print(results)
+```
+
+Filter:
+```python
+numbers = [-2, 0, 33, 4, -42, 1]
+
+positive_numbers = list(filter(lambda number: number > 0, numbers))
+
+print(positive_numbers)
+```
+
+Reduce:
+```python
+from functools import reduce
+
+numbers = [1, 2, 3, 4, 5]
+
+result = reduce(lambda acc, cur: acc + cur, numbers, 0)
+
+print(result)
+```
+
 ## Function arguments
 Similar to JS rest operator usage:
 
