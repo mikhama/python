@@ -585,3 +585,19 @@ json_string = json.dumps({
 # works like JSON.parse
 dictionary = json.loads(json_string)
 ```
+
+## Code introspection
+You can examine classes, functions and keywords to know what they do.
+
+The next utils are available:
+- `help()` - provides docs
+- `dir()` - provides list of attributes
+- `hasattr()` - returns True if attribute exists or False otherwise
+- `id()` - returns unique id for the object provided
+- `type()` - returns type of the object
+- `repr()` - returns the canonical string representation of the object
+- `callable()` - returns True if object is callable, i.e. function
+- `issubclass()` - returns True if a class is a subclass of another or the same class
+- `isinstance()` - returns True if an object is an instance of a class or a subclass
+- `__doc__` - the function's documentation string
+- `__name__` - the function's name
