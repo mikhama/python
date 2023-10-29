@@ -1,5 +1,8 @@
 # Python for JS developer
 
+## Useful resources
+- [Comparing Python and JavaScript: A guide for developers, by Mark Volkmann](https://objectcomputing.com/resources/publications/sett/december-2020-comparing-python-and-javascript)
+
 ## Intendation
 Intendation is crucuial for Python, since there are no brackets, like in JS. Standard is 4 spaces, but any amount of spaces can be used while it remains consistent. 
 
